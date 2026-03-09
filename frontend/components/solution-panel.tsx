@@ -81,7 +81,7 @@ export function SolutionPanel({ result }: SolutionPanelProps) {
                   cy="32"
                   r="28"
                   fill="none"
-                  stroke="hsl(var(--border))"
+                  stroke="var(--color-border)"
                   strokeWidth="4"
                 />
                 <circle
@@ -89,7 +89,7 @@ export function SolutionPanel({ result }: SolutionPanelProps) {
                   cy="32"
                   r="28"
                   fill="none"
-                  stroke={confidence >= 0.8 ? "hsl(var(--success))" : confidence >= 0.6 ? "hsl(var(--warning))" : "hsl(var(--destructive))"}
+                  stroke={confidence >= 0.8 ? "var(--color-success)" : confidence >= 0.6 ? "var(--color-warning)" : "var(--color-destructive)"}
                   strokeWidth="4"
                   strokeDasharray={`${confidence * 176} 176`}
                   strokeLinecap="round"

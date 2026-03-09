@@ -1,12 +1,10 @@
 [project]
-name = "math-mentor-backend"
+name = "backend"
 version = "0.1.0"
 description = "AI Math Mentor Backend with RAG and Multi-Agent System"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
-    "fastapi>=0.115.0",
-    "uvicorn>=0.32.0",
+    "fastapi[standard]>=0.128.1",
     "groq>=0.11.0",
-    "pydantic>=2.9.0",
     "python-multipart>=0.0.12",
 ]

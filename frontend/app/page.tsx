@@ -24,6 +24,7 @@ export default function Home() {
     imageFile?: File;
     audioBlob?: Blob;
   }) => {
+    console.log("[v0] handleSolve called with:", { inputMode, hasText: !!data.text, hasImage: !!data.imageFile, hasAudio: !!data.audioBlob });
     setIsLoading(true);
     setError(null);
     setResult(null);
@@ -48,13 +49,16 @@ export default function Home() {
         setCurrentProblem("[Audio Input]");
       }
 
+      console.log("[v0] Calling API with payload:", { ...payload, image_base64: payload.image_base64 ? "[base64 data]" : undefined, audio_base64: payload.audio_base64 ? "[base64 data]" : undefined });
       const response = await solveProblem(payload);
+      console.log("[v0] API response:", response);
       setResult(response);
       
       if (response.parsed_problem?.problem_text) {
         setCurrentProblem(response.parsed_problem.problem_text);
       }
     } catch (err) {
+      console.error("[v0] API error:", err);
       setError(err instanceof Error ? err.message : "An error occurred");
     } finally {
       setIsLoading(false);
