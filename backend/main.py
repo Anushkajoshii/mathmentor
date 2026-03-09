@@ -196,7 +196,7 @@ def extract_text_from_image(image_base64: str) -> tuple[str, float]:
     
     try:
         completion = groq_client.chat.completions.create(
-            model="llama-3.2-90b-vision-preview",
+            model="llama-3.2-11b-vision-preview",
             messages=[
                 {
                     "role": "user",
