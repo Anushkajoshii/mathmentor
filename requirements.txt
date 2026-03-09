@@ -1,0 +1,11 @@
+streamlit
+groq
+easyocr
+openai-whisper
+faiss-cpu
+sentence-transformers
+sympy
+numpy
+pillow
+python-dotenv
+pydantic
